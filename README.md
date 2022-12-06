@@ -6,4 +6,4 @@ Still at a very early stage of development
 
 URL for binder: https://mybinder.org/v2/gh/upriss/educaPython/HEAD
 
-https://hub-binder.mybinder.ovh/user/upriss-educapython-gdbmrnhx/lab/tree/ds11.ipynb
+https://mybinder.org/v2/gh/upriss/educaPython/HEAD?urlpath=lab/tree/ds11.ipynb
