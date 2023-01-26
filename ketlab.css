@@ -1,0 +1,8 @@
+a{text-decoration:underline}
+a.blank{text-decoration:none; color:blue}
+h3 {color:darkred}
+h3.title {color:darkred; text-align: center; margin-top: 0.3in; margin-bottom: 0.3in}
+h4.red {color:darkred}
+hr {color:darkred; background-color:darkred; height: 3px;}
+div.blockitem {color:darkred; font-weight:bold; margin-top: 0.2in}
+body {background-color: #FFFFFF;}
