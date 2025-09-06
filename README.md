@@ -1,10 +1,11 @@
 # ketlab
 
-Collection of Jupyter notebooks for teaching mathematics
+Software for data exploration with Formal Concept Analysis
 
-Still at a very early stage of development
+Redesign of an older website www.ketlab.org.uk
 
-The notebooks can be opened via MyBinder, but it will take a long time to load:
+Also one Jupyter notebook for FCA which can be opened via MyBinder, but will take a long 
+time to load:
 
 URL for binder: 
 https://mybinder.org/v2/gh/upriss/ketlab/main?urlpath=lab/tree/notebooks/fca.ipynb
