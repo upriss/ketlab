@@ -1,0 +1,6 @@
+a{text-decoration:underline}
+a.blank{text-decoration:none; color:blue}
+h3.title {text-align: center; margin-top: 0.2in; margin-bottom: 0.2in}
+hr {color:black; background-color:black; height: 3px;}
+body {background-color: #FFFFFF;}
+P { text-align: center; margin-top: 0.1in;margin-bottom: 0.1in }
