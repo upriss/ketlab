@@ -1,0 +1,73 @@
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<link rel="stylesheet" type="text/css" href="neigh.css" />
+<TITLE>Roget's Thesaurus</TITLE>
+<script src='https://cdn.jsdelivr.net/gh/upriss/ketlab/utils/sql-wasm.js'></script>
+<script src="https://cdn.jsdelivr.net/gh/upriss/ketlab/utils/useMasterDB.js"></script>
+</HEAD>
+<body>
+
+<h3 class='title'>Concept Neighbourhoods in Roget's Thesaurus</h3>
+
+<form id='rogetrespond'>
+<p><input type="text" name="word" value="explore">
+<input type="hidden" name="file" value="png">
+<input type="hidden" name="s2g2" value="s2g1" >
+<input type='submit' name='' value='submit'>
+</form>
+<p>
+Type in any word to see the concept
+neighbourhood of the word in Roget's Thesaurus.
+<br>
+<a target="a" href="help.html">Help and more information</a>
+</p>
+<hr>
+<div id = "errors"></div>
+
+<script>
+const form1 = document.getElementById('rogetrespond');   // write the query string
+form1.addEventListener('submit', (evt) => {
+  evt.preventDefault();
+  const form1Data = new FormData(form1);
+  const parameters = new URLSearchParams(form1Data);
+  form1.action = form1.action +  "?" + parameters.toString();
+  form1.submit();                                        // opens the page again
+});
+
+const params = new URLSearchParams(window.location.search);      // read the query string
+var word = document.getElementById('rogetrespond')[0].value;
+var tmpword = params.get('word');                                // word from query string
+if (tmpword != null && word != tmpword) {
+    document.getElementById('rogetrespond')[0].value = tmpword
+    word = tmpword
+}
+var s2g2 = params.get('s2g2'); 
+var revers = params.get('reverse'); 
+var odegr = params.get('objdegr'); 
+var adegr = params.get('attrdegr'); 
+var filetyp = params.get('file'); 
+var elem;
+var uri = 'https://upriss.github.io/educaJS/binaryRelations/binRel.html'
+uri += "?ttype=lattice&rtype=fca&graph="
+s2g2='s2g1';
+
+params.forEach( function(item) {
+    if (item.match(/[^\w \-\.:]/)) {
+	document.getElementById("errors").innerHTML = 
+	    "only alphanumerical characters allowed";
+    }
+});
+if (s2g2 == "" || word == "") {
+    document.getElementById("errors").innerHTML =
+	"One word and one type of neighbourhood must be chosen";
+}
+</script>
+
+<script type="module">
+import {db} from "https://cdn.jsdelivr.net/gh/upriss/ketlab/utils/openMasterDB.js";
+window.db = db;                      // making it global so that readRIT() can see it
+readRIT(db);
+</script>
+
+<iframe id="resultframe" src="" width='100%' height='90%'></iframe>
+
