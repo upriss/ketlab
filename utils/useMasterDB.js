@@ -32,7 +32,8 @@ function readRIT(db) {
         console.log("empty result set")
     } else {
       output = format_output(revers,"set_as_string",results[0].values)
+      output = output.replace(/ /g, "_");
     document.getElementById("resultframe").src = uri+output
-console.log(output)
+//console.log(output)
     }
 }

@@ -4,6 +4,7 @@
 <TITLE>Roget's Thesaurus</TITLE>
 <script src='https://cdn.jsdelivr.net/gh/upriss/ketlab/utils/sql-wasm.js'></script>
 <script src="https://cdn.jsdelivr.net/gh/upriss/ketlab/utils/useMasterDB.js"></script>
+<!--<script src="utils/useMasterDB.js"></script>-->
 </HEAD>
 <body>
 
@@ -65,6 +66,7 @@ if (s2g2 == "" || word == "") {
 
 <script type="module">
 import {db} from "https://cdn.jsdelivr.net/gh/upriss/ketlab/utils/openMasterDB.js";
+//import {db} from "./utils/_openMasterDB.js";
 window.db = db;                      // making it global so that readRIT() can see it
 readRIT(db);
 </script>
